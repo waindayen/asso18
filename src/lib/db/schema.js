@@ -1,0 +1,43 @@
+export const schema = {
+  projects: {
+    id: 'uuid',
+    title: 'text',
+    description: 'text',
+    category: 'text',
+    location: 'text',
+    image: 'text',
+    progress: 'numeric',
+    goal: 'integer',
+    raised: 'integer',
+    start_date: 'timestamp',
+    end_date: 'timestamp',
+    created_at: 'timestamp',
+  },
+  donations: {
+    id: 'uuid',
+    amount: 'integer',
+    project_id: 'uuid references projects(id)',
+    donor_name: 'text',
+    donor_email: 'text',
+    status: 'text',
+    created_at: 'timestamp',
+  },
+  volunteers: {
+    id: 'uuid',
+    first_name: 'text',
+    last_name: 'text',
+    email: 'text',
+    phone: 'text',
+    skills: 'text[]',
+    availability: 'text',
+    status: 'text',
+    created_at: 'timestamp',
+  },
+  users: {
+    id: 'uuid',
+    email: 'text unique',
+    encrypted_password: 'text',
+    role: 'text',
+    created_at: 'timestamp',
+  }
+};
